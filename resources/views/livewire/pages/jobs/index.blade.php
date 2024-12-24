@@ -50,8 +50,8 @@
                                             @endforeach
                                         </div>
                                     </td>
-                                    <td class="px-4 py-3 flex items-center justify-end">
-                                        <a href="#" class="text-sm px-3 py-1.5 rounded hover:bg-slate-100 transition-colors text-red-500">Delete</a>
+                                   <td class="px-4 py-3 flex items-center justify-end">
+                                        <button wire:click="deleteJob({{ $job['id'] }})" class="text-sm px-3 py-1.5 rounded hover:bg-slate-100 transition-colors text-red-500">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -62,3 +62,8 @@
         </div>
     </div>
 </div>
+@if (session()->has('message'))
+    <div class="alert alert-success mt-4">
+        {{ session('message') }}
+    </div>
+@endif
